@@ -1,0 +1,361 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.kapsayici{
+    background: #fcf7f2;
+    height: 107px;
+    
+   
+}
+.row{
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+}
+.col{
+    height: 100%;
+}
+.colSag{
+    
+}   
+.colSol{
+    
+}
+.ortak{
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+.logo{
+    margin-top: 38px;
+}
+.sagUst{
+    width: 100%;
+    height: 50%;
+}
+.sagUst1{
+    width: 9%;
+    height: 52px;
+    background: #ffffff;
+    border: 1px solid #e3dada;
+}
+.sagUst2{
+    width: 40%;
+   
+    height: 52px;
+    border: 1px solid #e3dada;
+    background: #f7f7f7;
+    
+    
+}
+.sagUst3{
+    width: 40%;
+    
+    height: 52px;
+    border: 1px solid #3c3739;
+    background: #231f21;
+}
+.sagUst4{
+    width: 9%;
+    float: left;
+    
+    height: 52px;
+    background: #322c2e;
+    
+    color: #008cba;
+    border: 1px solid #3c3739;
+    
+    font-family: 'Dax-Medium';
+}
+.sagUstOrtak{
+    float: left;
+}
+.searchLogo{
+    padding: 16px;
+}
+.yazi{
+    font-family: 'Dax-Medium';
+    color: #231f21;
+    font-size: 100%;
+    font: inherit;
+    margin: {
+    left: 5px;
+    };
+
+}
+.yazi1{
+    color: #f3f0f0;
+    margin-left: 5px;
+}
+.yaziTutucu{
+    float: left;
+    margin-top: 17px;
+}
+.imgTutucu{
+    float: left;
+    margin: {
+        left: 20px;
+    };
+}
+.imgTutucu1{
+    float: left;
+    margin: {
+        top: 17px;
+        left: 15px;
+    }
+}
+.enYazisi{
+    margin: 16px;
+}
+.sagAltOrtak{
+    float: left;
+    border-right: 1px solid #e3dada;
+}
+
+   
+.sagAlt1{
+    border-right: 1px solid #e3dada;
+}
+.aUrunYazisi{
+    font-size: 15px;
+    color: #776d72;
+    margin: {
+        left: 5px;
+        right: 5px;
+    };
+}
+.sagAlt{
+    width: 100%;
+    height: 25%;
+    padding-left: 136px;
+    padding-top: 10px;
+    
+}
+.sagAlt2{
+    margin: 8px;
+}
+.sagAlt3{
+    margin: 8px;
+}
+.kapsayici2{
+    background: #ffb300;
+    border-top: 1px solid #ed9c29;
+    border-bottom: 1px solid #db9127;
+    height: 51px;
+    width: 100%;
+}
+.row2{
+    width: 55%;
+    margin: 0 auto;
+    height: 100%;
+   
+}
+.rowOrtak{
+    float: left;
+    width: 170px;
+    height: 100%;
+    border-right: 1px solid #c77e15;
+    font-size: 17px;
+    color: #121011;
+    display: table;
+    font-family: 'Dax-Medium';
+    
+  
+}
+b{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.kapsayici3{
+    width: 100%;
+    height: 591px;
+    background: #e9e4e0;
+   
+}
+.kapsayiciLogo{
+    padding-left: 22%;
+}
+.container-fluid{
+height: 43px;
+background: #fff5e9;
+}
+.kapsayici4{
+    height: 552px;
+    background: #ffb300;
+    border-top: 1px solid #ed9c29;
+    border-bottom: 1px solid #db9127;
+    
+}
+.kapsayici4Row{
+width: 65%;
+margin: 0 auto;
+height: 85%;
+}
+h2{
+    font-size: 44px;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    font-family: 'DaxCondensed-Bold';
+}
+.p1{
+    font-size: 20px;
+    color: #231f20;
+    text-align: center;
+    font-family: 'Dax-Regular';
+    margin-bottom: 59px;
+}
+.kutuOrtak{
+    float: left;
+    width: 262px;
+    height: 281px;
+    background: #fffaf5;
+    border-radius: 5px;
+    margin-right: 34px;;
+}
+.h2Yazi1{
+    font-size: 20px;
+    color: #000;
+    padding-top: 130px;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    margin: 13px;
+    font-family: 'DaxCondensed-Bold';
+}
+.mevduatLogo{
+    margin-left: 99px;
+    margin-top: 37px;
+}
+.mevduatP{
+    font-size: 19px;
+    color: #231f21;
+    text-align: center;
+    font-family: 'Dax-Regular';
+}
+.kapsayici5{
+    height: 456px;
+    background: #e9e4e0;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border-bottom: 1px solid #d2c9c2;
+}
+.kapsayici5Row{
+    margin: 0 auto;
+    width: 65%;
+}
+.h2Iki{
+
+    font-size: 44px;
+    padding-bottom: 15px;
+    color: #e68a06;
+    font-family: 'DaxCondensed-Bold';
+    float: left;
+    
+}
+.pYazi2{
+    font-size: 18px;
+    color: #231f20;
+    padding-bottom: 70px;
+    font-family: 'Dax-Regular';
+}
+.mevduatLogo1{
+    width: 100%;
+}
+.kutuAlt{
+    text-align: center;
+    background: #fffaf5;
+    height: 35%;
+    border-radius: 5px;
+}
+.aYazi1{
+   color:#008cba;
+   font: {
+       
+       size: 18px;
+      
+   };
+}
+.h2Yazi2{
+    border-radius: 5px;
+    background: #423c3c;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    line-height: 30px;
+    width: 60%;
+    
+    top: -30px;
+    font-family: 'DaxCondensed-Bold';
+    position: relative;
+  
+    margin: {
+        left: auto;
+        right: 22.3%;
+        top: auto;
+        bottom:  auto;
+    }
+}
+.pyazi1{
+    padding-left: 55px;
+    font-size: 12px;
+    padding-bottom: 20px;
+}
+.fbLogo2{
+    width: 110px;
+    height: 23px;
+    border-radius: 3px;
+    padding-left: 55px;
+    padding-bottom: 20px;
+}
+.kapsayici6{
+    height: 314px;
+    position: relative;
+    background: #faf5f0;
+    margin-top:-30px;
+ 
+}
+.kapsayici6Row{
+    width: 72%;
+    margin: 0 auto;
+    height: 100%;
+    padding-top: 50px;
+}
+.kutuOneOrtak{
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 195px;
+    height: 224px;
+}
+.a1{
+    font-size: 18px;
+}
+.img1{
+    margin-bottom: 7px;
+}
+.kapsayici7{
+    border-top: 1px solid #ded9d5;
+    padding-top: 20px;
+    height: 181px;
+    position: relative;
+    background: #faf5f0;
+}
+.duyurular{
+    font-size: 30px;
+    color: #423c3c;
+    text-align: center;
+    font-family: 'DaxCondensed-Bold';
+}
+.duyurular1{
+    font-size: 22px;
+    color: #6b6969;
+    display: block;
+    
+    
+}

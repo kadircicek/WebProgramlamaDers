@@ -159,12 +159,11 @@
   color: #121011;
   display: table;
   font-family: "Dax-Medium";
+  text-align: center;
 }
 
 b {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+  line-height: 45px;
 }
 
 .kapsayici3 {
@@ -180,6 +179,36 @@ b {
 .container-fluid {
   height: 43px;
   background: #fff5e9;
+  z-index: 1;
+  position: relative;
+}
+
+.container-fluid-row {
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.slick-track {
+  width: 945px;
+  height: 148px;
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px);
+  display: block;
+  top: -105px;
+  position: relative;
+  display: table;
+  overflow: hidden;
+}
+
+.yuvarlakOrtak {
+  float: left;
+  width: 149px;
+  height: 148px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 150px;
 }
 
 .kapsayici4 {
@@ -221,6 +250,24 @@ h2 {
   margin-right: 34px;
 }
 
+.kutuOrtak2 {
+  float: left;
+  width: 262px;
+  height: 281px;
+  background: #ffb300;
+  border-radius: 5px;
+  margin-right: 34px;
+}
+
+.kutuOrtak3 {
+  float: left;
+  width: 262px;
+  height: 300px;
+  background: #ffb300;
+  border-radius: 5px;
+  margin-right: 34px;
+}
+
 .h2Yazi1 {
   font-size: 20px;
   color: #000;
@@ -228,6 +275,16 @@ h2 {
   text-align: center;
   padding-bottom: 20px;
   padding-top: 10px;
+  margin: 13px;
+  font-family: "DaxCondensed-Bold";
+}
+
+.h2Yazi3 {
+  font-size: 20px;
+  color: #000;
+  padding-top: 130px;
+  text-align: center;
+  padding-top: 0px;
   margin: 13px;
   font-family: "DaxCondensed-Bold";
 }
@@ -288,6 +345,10 @@ h2 {
   font-size: 18px;
 }
 
+.aYazi1:hover {
+  border-bottom: 1px solid #008cba;
+}
+
 .h2Yazi2 {
   border-radius: 5px;
   background: #423c3c;
@@ -345,6 +406,10 @@ h2 {
 
 .a1 {
   font-size: 18px;
+}
+
+.a1:hover {
+  border-bottom: 1px solid #231f20;
 }
 
 .img1 {
@@ -466,4 +531,239 @@ h2 {
   color: #877e7e;
   text-align: right;
   padding-top: 90px;
+}
+
+b:hover {
+  border-bottom: 2px solid black;
+}
+
+a.aUrunYazisi:hover {
+  border-bottom: 1px solid #776d72;
+}
+
+span:hover {
+  border-bottom: 1px solid #776d72;
+}
+
+.kapsayici2-5 {
+  height: 100px;
+  background: #ffffff;
+  border-bottom: 1px solid #afa7ab;
+}
+
+.kapsayici2-6 {
+  height: 55px;
+  background: #ffffff;
+  border-bottom: 1px solid #afa7ab;
+}
+
+.kapsayici2-5-row {
+  width: 60%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.kapsayici2-6-row {
+  width: 66%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.boxOrtak {
+  float: left;
+  width: 139.5px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-right: 1px solid #e2e2e2;
+  color: #121011;
+}
+
+.boxOrtak1 {
+  float: left;
+  width: 239.5px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-right: 1px solid #e2e2e2;
+  color: #121011;
+}
+
+.box2 {
+  float: left;
+  width: 139.5px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-left: 1px solid #e2e2e2;
+}
+
+.box2 {
+  width: 163px;
+}
+
+.box3 {
+  float: left;
+  width: 139.5px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-right: 1px solid #e2e2e2;
+}
+
+.kapsayici2-75 {
+  background: white;
+  height: 65px;
+}
+
+.kapsayici2-75-row {
+  width: 60%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.k1 {
+  background: white;
+  height: 480px;
+}
+
+.k2 {
+  background: white;
+  height: 150px;
+}
+
+.k1-1 {
+  width: 63%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+h3 {
+  font-size: 24px;
+  color: #231f20;
+  font-family: "DaxCondensed-Bold";
+  padding-bottom: 20px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.arac1 {
+  padding: 8px;
+}
+
+.s1 {
+  font-size: 24px;
+  color: #231f20;
+  font-family: "DaxCondensed-Bold";
+}
+
+.kpsy1 {
+  height: 402px;
+  background: white;
+}
+
+.kpsy-row {
+  width: 60%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.rowAlti1 {
+  position: relative;
+  background: #f5efe9;
+  position: relative;
+  background: #f5efe9;
+  border-radius: 5px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  padding-top: 20px;
+  height: 223px;
+}
+
+.sariRehber {
+  float: left;
+}
+
+.yellow {
+  float: left;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  font-size: 44px;
+  line-height: 30px;
+  color: #ffb300;
+}
+
+.yellow1 {
+  text-align: left;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-size: 21px;
+  line-height: 30px;
+  color: black;
+}
+
+.yellow2 {
+  font-size: 18px;
+}
+
+.yardim {
+  font-family: "DaxCondensed-Bold";
+  font-size: 24px;
+  color: #231f20;
+}
+
+.yellowAlti {
+  float: left;
+}
+
+.A1 {
+  width: 20%;
+}
+
+.A2 {
+  width: 50%;
+  height: 100%;
+}
+
+.A3 {
+  width: 30%;
+  height: 100%;
+  display: table;
+}
+
+.A1ortak {
+  float: left;
+}
+
+.y1 {
+  height: 50%;
+}
+
+.y2 {
+  height: 15%;
+}
+
+.y3 {
+  height: 25%;
+}
+
+.baslaButonu {
+  width: 185px;
+  height: 64px;
+  text-align: center;
+  background: black;
+  color: white;
+  line-height: 60px;
+  width: 185px;
+  height: 64px;
+  line-height: 64px;
+  text-align: center;
+  background-position: 60px center;
+  position: absolute;
+  bottom: 65px;
+  right: 75px;
+}
+
+.rowOrtak:hover {
+  background: white;
 }

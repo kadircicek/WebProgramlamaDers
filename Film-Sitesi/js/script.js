@@ -1,49 +1,36 @@
 var filmListesi = ['The Gentlemen', 'Black Widow', 'Artemis Fowl', 'Mulan', 'Bloodshot'];
+var idListesi = ['deneme', 'deneme2', 'deneme3', 'deneme4', 'deneme5'];
 var data;
 function getanswer() {
 
-  $.get("https://www.omdbapi.com/?s=" + filmListesi[0] + "&apikey=ba1f4581", function (rawdata) {
-    var rawstring = JSON.stringify(rawdata);
-    data = JSON.parse(rawstring);
-    var posterurl = data.Search[0].Poster;
-    document.getElementById('deneme').innerHTML = " <img class='d-block w-100 imgBoyutu' src= '" + posterurl + "'>";
+  for (let i = 0; i < filmListesi.length; i++) {
+    $.get("https://www.omdbapi.com/?s=" + filmListesi[i] + "&apikey=ba1f4581", function (rawdata) {
+      var rawstring = JSON.stringify(rawdata);
+      data = JSON.parse(rawstring);
+      var posterurl = data.Search[0].Poster;
+      document.getElementById(idListesi[i]).innerHTML = " <img class='d-block w-100 imgBoyutu' src= '" + posterurl + "'>";
+
+    });
+  }
+
+
+  var top10 = ['Arrival', 'Hobbit', 'Call Me by Your Name', 'La La Land', 'Avatar', 'The Artist', 'Life of Pi', 'Star Wars', 'Iron Man', 'Slumdog Millionaire','The Revenant','The Avengers','The King’s Speech','The Bourne Ultimatum','Guardians of the Galaxy','Blade Runner 2049','Shutter Island','Deadpool','Ford v Ferrari','Logan','Gone Girl','12 Years a Slave','Prisoners','Mad Max: Fury Road','Into the Wild','No Country for Old Men','There Will Be Blood','Inside Out','The Wolf of Wall Street','Warrior','Jaws','Toy Story 3','Inglourious Basterds','3 Idiots','Django Unchained','WALL-E','Avengers Endgame','Joker','Avengers: İnfinity War','The Dark Knight Rises','The Intouchables','Whiplash','Interstellar','Inception','The Dark Knight','The Post','extinction','Lost In Space','Justice League','Coco'];
+  for (let index = 0; index < top10.length; index++) {
+    $.get("https://www.omdbapi.com/?s=" + top10[index] + "&apikey=ba1f4581", function (rawdata) {
+      var rawstring = JSON.stringify(rawdata);
+      data = JSON.parse(rawstring);
+      var title = data.Search[0].Title;
+      var posterurl = data.Search[0].Poster;
+      document.getElementById(index).innerHTML = " <img class='d-block w-100 imgBoyutu' src= '" + posterurl + "'><br><span>" + title + "</span>";
 
 
 
-  });
-  $.get("https://www.omdbapi.com/?s=" + filmListesi[1] + "&apikey=ba1f4581", function (rawdata) {
-    var rawstring = JSON.stringify(rawdata);
-    data = JSON.parse(rawstring);
-    var posterurl = data.Search[0].Poster;
-    document.getElementById('deneme2').innerHTML = " <img class='d-block w-100 imgBoyutu' src= '" + posterurl + "'>";
+    });
 
+  }
 
-  });
-  $.get("https://www.omdbapi.com/?s=" + filmListesi[2] + "&apikey=ba1f4581", function (rawdata) {
-    var rawstring = JSON.stringify(rawdata);
-    data = JSON.parse(rawstring);
-    var posterurl = data.Search[0].Poster;
-    document.getElementById('deneme3').innerHTML = " <img class='d-block w-100 imgBoyutu' src= '" + posterurl + "'>";
-
-
-  });
-  $.get("https://www.omdbapi.com/?s=" + filmListesi[3] + "&apikey=ba1f4581", function (rawdata) {
-    var rawstring = JSON.stringify(rawdata);
-    data = JSON.parse(rawstring);
-    var posterurl = data.Search[0].Poster;
-    document.getElementById('deneme4').innerHTML = " <img class='d-block w-100 imgBoyutu' src= '" + posterurl + "'>";
-
-
-  });
-  $.get("https://www.omdbapi.com/?s=" + filmListesi[4] + "&apikey=ba1f4581", function (rawdata) {
-    var rawstring = JSON.stringify(rawdata);
-    data = JSON.parse(rawstring);
-    var posterurl = data.Search[0].Poster;
-    document.getElementById('deneme5').innerHTML = " <img class='d-block w-100 imgBoyutu' src= '" + posterurl + "'>";
-
-
-  });
 }
+
 $(document).ready(function () {
   var $imagesCarousel = $('.carouselOfImages').flickity({
     contain: true,

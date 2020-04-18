@@ -14,7 +14,7 @@ function getanswer() {
   }
 
 
-  var top10 = ['Arrival', 'Hobbit', 'Call Me by Your Name', 'La La Land', 'Avatar', 'The Artist', 'Life of Pi', 'Star Wars', 'Iron Man', 'Slumdog Millionaire','The Revenant','The Avengers','The King’s Speech','The Bourne Ultimatum','Guardians of the Galaxy','Blade Runner 2049','Shutter Island','Deadpool','Ford v Ferrari','Logan','Gone Girl','12 Years a Slave','Prisoners','Mad Max: Fury Road','Into the Wild','No Country for Old Men','There Will Be Blood','Inside Out','The Wolf of Wall Street','Warrior','Jaws','Toy Story 3','Inglourious Basterds','3 Idiots','Django Unchained','WALL-E','Avengers Endgame','Joker','Avengers: İnfinity War','The Dark Knight Rises','The Intouchables','Whiplash','Interstellar','Inception','The Dark Knight','The Post','extinction','Lost In Space','Justice League','Coco'];
+  var top10 = ['Arrival', 'Hobbit', 'Call Me by Your Name', 'La La Land', 'Avatar', 'The Artist', 'Life of Pi', 'Star Wars', 'Iron Man', 'Slumdog Millionaire', 'The Revenant', 'The Avengers', 'The King’s Speech', 'The Bourne Ultimatum', 'Guardians of the Galaxy', 'Blade Runner 2049', 'Shutter Island', 'Deadpool', 'Ford v Ferrari', 'Logan', 'Gone Girl', '12 Years a Slave', 'Prisoners', 'Mad Max: Fury Road', 'Into the Wild', 'No Country for Old Men', 'There Will Be Blood', 'Inside Out', 'The Wolf of Wall Street', 'Warrior', 'Jaws', 'Toy Story 3', 'Inglourious Basterds', '3 Idiots', 'Django Unchained', 'WALL-E', 'Avengers Endgame', 'Joker', 'Avengers: İnfinity War', 'The Dark Knight Rises', 'The Intouchables', 'Whiplash', 'Interstellar', 'Inception', 'The Dark Knight', 'The Post', 'extinction', 'Lost In Space', 'Justice League', 'Coco'];
   for (let index = 0; index < top10.length; index++) {
     $.get("https://www.omdbapi.com/?s=" + top10[index] + "&apikey=ba1f4581", function (rawdata) {
       var rawstring = JSON.stringify(rawdata);
@@ -28,6 +28,47 @@ function getanswer() {
     });
 
   }
+
+
+}
+var data;
+function top50Film() {
+  $("#goster").hide();
+
+  var top10 = ['Arrival', 'Hobbit', 'Call Me by Your Name', 'La La Land', 'Avatar', 'The Artist', 'Life of Pi', 'Star Wars', 'Iron Man', 'Slumdog Millionaire', 'The Revenant', 'The Avengers', 'The King’s Speech', 'The Bourne Ultimatum', 'Guardians of the Galaxy', 'Blade Runner 2049', 'Shutter Island', 'Deadpool', 'Ford v Ferrari', 'Logan', 'Gone Girl', '12 Years a Slave', 'Prisoners', 'Mad Max: Fury Road', 'Into the Wild', 'No Country for Old Men', 'There Will Be Blood', 'Inside Out', 'The Wolf of Wall Street', 'Warrior', 'Jaws', 'Toy Story 3', 'Inglourious Basterds', '3 Idiots', 'Django Unchained', 'WALL-E', 'Avengers Endgame', 'Joker', 'Avengers: İnfinity War', 'The Dark Knight Rises', 'The Intouchables', 'Whiplash', 'Interstellar', 'Inception', 'The Dark Knight', 'The Post', 'extinction', 'Lost In Space', 'Justice League', 'Coco'];
+  for (let index = 0; index < top10.length; index++) {
+    $.get("https://www.omdbapi.com/?s=" + top10[index] + "&apikey=ba1f4581", function (rawdata) {
+      var rawstring = JSON.stringify(rawdata);
+      data = JSON.parse(rawstring);
+      var title = data.Search[0].Title;
+      var posterurl = data.Search[0].Poster;
+      document.getElementById(index).innerHTML = " <img class='d-block w-100 imgBoyutu' src= '" + posterurl + "'><br><span>" + title + "</span>";
+
+
+
+    });
+
+  }
+
+}
+
+function cagir(q) {
+  
+  $("#gizle").hide();
+  if(document.getElementById('kelime').value==''){
+    $('#gizle').show();
+    $("#goster").hide();
+  }else{
+    $("#goster").show();
+
+  }
+  $.get("https://www.omdbapi.com/?s=" + q + "&apikey=ba1f4581", function (rawdata) {
+    var rawstring = JSON.stringify(rawdata);
+    data = JSON.parse(rawstring);
+    var title = data.Search[0].Title;
+    var posterurl = data.Search[0].Poster;
+    document.getElementById('answer').innerHTML = " <img src= '" + posterurl + "'><br><span>" + title + "</span>";
+});
 
 }
 
@@ -104,7 +145,6 @@ $(document).ready(function () {
     });
   });
 });
-
 
 
 

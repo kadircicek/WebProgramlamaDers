@@ -5,17 +5,229 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stil.css" />
+    
+
+
+    <link rel="stylesheet" href="https://cdn.rawgit.com/JacobLett/bootstrap4-latest/master/bootstrap-4-latest.min.css">
     <title>Film Listesi</title>
 </head>
 
-<body>
+<body onload="top50Film()">
     <div class="ustFooterContainer">
         <div class="footerIci">
-            <a href="Anasayfa.html"><img class="siteLogo" src="img/abc.png" /></a>
-            <span class="siteAra"><img class="siteSearch" src="img/search.png" /></span>
+            <div class="logoAnasayfa"><a href="Anasayfa.html"><img class="siteLogo" src="img/abc.png" /></a></div>
+            <div class="inputYeri">
+                <div class="input-group input-group-sm mb-3">
+                    <div class="input-group-prepend">
+
+                    </div>
+                    <input type="text" oninput="cagir(document.getElementById('kelime').value)" id="kelime" placeholder="Film Ara" class="form-control" aria-label="Small"
+                        aria-describedby="inputGroup-sizing-sm">
+                   
+                </div>
+            </div>
+
+
 
         </div>
     </div>
+    <div id="goster" class="filmlerKapsayici">
+        <div class="s-filmler-kapsayici">
+            <div class="imgKutusu">
+                <div id="answer"></div>
+            </div>
+        </div>
+    </div>
+    <div class="filmlerKapsayici" id="gizle">
+
+        <div class="s-filmler-kapsayici">
+            <div id="0" class="imgKutusu">
+            </div>
+            <div id="1" class="imgKutusu">
+
+            </div>
+            <div id="2" class="imgKutusu">
+
+            </div>
+            <div id="3" class="imgKutusu">
+
+            </div>
+            <div id="4" class="imgKutusu">
+
+            </div>
+
+        </div>
+        <div class="s-filmler-kapsayici">
+            <div id="5" class="imgKutusu">
+
+            </div>
+            <div id="6" class="imgKutusu">
+
+            </div>
+            <div id="7" class="imgKutusu">
+
+            </div>
+            <div id="8" class="imgKutusu">
+
+            </div>
+            <div id="9" class="imgKutusu">
+
+            </div>
+
+        </div>
+        <div class="s-filmler-kapsayici">
+            <div id="10" class="imgKutusu">
+
+            </div>
+            <div id="11" class="imgKutusu">
+
+            </div>
+            <div id="12" class="imgKutusu">
+
+            </div>
+            <div id="13" class="imgKutusu">
+
+            </div>
+            <div id="14" class="imgKutusu">
+
+            </div>
+
+        </div>
+        <div class="s-filmler-kapsayici">
+            <div id="15" class="imgKutusu">
+
+            </div>
+            <div id="16" class="imgKutusu">
+
+            </div>
+            <div id="17" class="imgKutusu">
+
+            </div>
+            <div id="18" class="imgKutusu">
+
+            </div>
+            <div id="19" class="imgKutusu">
+
+            </div>
+
+        </div>
+        <div class="s-filmler-kapsayici">
+            <div id="20" class="imgKutusu">
+
+            </div>
+            <div id="21" class="imgKutusu">
+
+            </div>
+            <div id="22" class="imgKutusu">
+
+            </div>
+            <div id="23" class="imgKutusu">
+
+            </div>
+            <div id="24" class="imgKutusu">
+
+            </div>
+
+        </div>
+        <div class="s-filmler-kapsayici">
+            <div id="25" class="imgKutusu">
+
+            </div>
+            <div id="26" class="imgKutusu">
+
+            </div>
+            <div id="27" class="imgKutusu">
+
+            </div>
+            <div id="28" class="imgKutusu">
+
+            </div>
+            <div id="29" class="imgKutusu">
+
+            </div>
+
+        </div>
+        <div class="s-filmler-kapsayici">
+            <div id="30" class="imgKutusu">
+
+            </div>
+            <div id="31" class="imgKutusu">
+
+            </div>
+            <div id="32" class="imgKutusu">
+
+            </div>
+            <div id="33" class="imgKutusu">
+
+            </div>
+            <div id="34" class="imgKutusu">
+
+            </div>
+
+        </div>
+        <div class="s-filmler-kapsayici">
+            <div id="35" class="imgKutusu">
+
+            </div>
+            <div id="36" class="imgKutusu">
+
+            </div>
+            <div id="37" class="imgKutusu">
+
+            </div>
+            <div id="38" class="imgKutusu">
+
+            </div>
+            <div id="39" class="imgKutusu">
+
+            </div>
+
+        </div>
+        <div class="s-filmler-kapsayici">
+            <div id="40" class="imgKutusu">
+
+            </div>
+            <div id="41" class="imgKutusu">
+
+            </div>
+            <div id="42" class="imgKutusu">
+
+            </div>
+            <div id="43" class="imgKutusu">
+
+            </div>
+            <div id="44" class="imgKutusu">
+
+            </div>
+
+        </div>
+        <div class="s-filmler-kapsayici">
+            <div id="45" class="imgKutusu">
+
+            </div>
+            <div id="46" class="imgKutusu">
+
+            </div>
+            <div id="47" class="imgKutusu">
+
+            </div>
+            <div id="48" class="imgKutusu">
+
+            </div>
+            <div id="49" class="imgKutusu">
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/JacobLett/bootstrap4-latest/master/bootstrap-4-latest.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>

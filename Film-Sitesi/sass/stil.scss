@@ -1,7 +1,10 @@
 * {
   margin: 0;
   padding: 0;
-  background: #000;
+  background-color: #000;
+}
+html{
+  background-color: #000;
 }
 .ustFooterContainer {
   height: 72px;
@@ -9,12 +12,24 @@
   .footerIci {
     width: 50%;
     margin: 0 auto;
-    height: 100%;
+    height: 99%;
     position: relative;
+    .logoAnasayfa{
+      height: 100%;
+      width: 6%;
+      float: left;
+    }
+    .inputYeri{      
+      width: 54%;
+     
+      padding-top: 20px;
+      margin-left: 120px;
+    }
     .siteLogo {
       width: 50px;
       height: 50px;
       top: 15%;
+      float: left;
       position: absolute;
     }
     .siteAra {
@@ -327,4 +342,21 @@ span{
   background: #1d2124;
   color: wheat;
   
+}
+.filmlerKapsayici{
+ height: 510px;
+  .s-filmler-kapsayici{
+    width: 73%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    
+    .imgKutusu{
+      float: left;
+      width: 250px;
+      position: relative;
+      top: 10%;
+      margin-right: 2%;
+    }
+  }
 }

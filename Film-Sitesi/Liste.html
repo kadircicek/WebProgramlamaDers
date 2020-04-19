@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stil.css" />
-    
+
 
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/JacobLett/bootstrap4-latest/master/bootstrap-4-latest.min.css">
@@ -21,9 +21,10 @@
                     <div class="input-group-prepend">
 
                     </div>
-                    <input type="text" oninput="cagir(document.getElementById('kelime').value)" id="kelime" placeholder="Film Ara" class="form-control" aria-label="Small"
+                    <input type="text" oninput="cagir(document.getElementById('kelime').value)" id="kelime"
+                        placeholder="Film Ara" class="form-control" aria-label="Small"
                         aria-describedby="inputGroup-sizing-sm">
-                   
+
                 </div>
             </div>
 
@@ -31,34 +32,120 @@
 
         </div>
     </div>
+    <div class="kriterContainer">
+        <div class="kriterler">
+            <div class="selectTutucu">
+                <select class="form-control form-control-sm">
+                    <option>2000</option>
+                    <option>2001</option>
+                    <option>2002</option>
+                    <option>2003</option>
+                    <option>2004</option>
+                    <option>2005</option>
+                    <option>2006</option>
+                    <option>2007</option>
+                    <option>2008</option>
+                    <option>2009</option>
+                    <option>2010</option>
+                    <option>2011</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                    <option>2016</option>
+                    <option>2017</option>
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+
+                </select>
+            </div>
+            <div class="selectTutucu">
+                <select class="form-control form-control-sm">
+                    <option>Romance</option>
+                </select>
+            </div>
+            <div class="selectTutucu">
+                <select class="form-control form-control-sm">
+
+                    <option>Small select</option>
+                </select>
+            </div>
+
+        </div>
+    </div>
     <div id="goster" class="filmlerKapsayici">
         <div class="s-filmler-kapsayici">
-            <div class="imgKutusu">
+            <div class="imgKutusu" onclick="gonder1(document.getElementById('kelime').value)" >
                 <div id="answer"></div>
+            </div>
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 id="hevagi3" class="modal-title"></h4>
+                        </div>
+                        <div id="hevagi4" class="modal-body">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
+
+
+
     <div class="filmlerKapsayici" id="gizle">
 
         <div class="s-filmler-kapsayici">
-            <div id="0" class="imgKutusu">
-            </div>
-            <div id="1" class="imgKutusu">
 
-            </div>
-            <div id="2" class="imgKutusu">
-
-            </div>
-            <div id="3" class="imgKutusu">
-
-            </div>
-            <div id="4" class="imgKutusu">
-
+            <div id="0" onclick="gonder('0')" class="imgKutusu">
             </div>
 
+            <div id="1" onclick="gonder('1')" class="imgKutusu">
+
+            </div>
+            <div id="2" onclick="gonder('2')" class="imgKutusu">
+
+            </div>
+            <div id="3" onclick="gonder('3')" class="imgKutusu">
+
+            </div>
+            <div id="4" onclick="gonder('4')" class="imgKutusu">
+
+            </div>
+            <div class="modal fade" id="myModal1" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 id="hevagi" class="modal-title"></h4>
+                        </div>
+                        <div id="hevagi2" class="modal-body">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
+
+
         <div class="s-filmler-kapsayici">
-            <div id="5" class="imgKutusu">
+            <div id="5" onclick="gonder('5')" class="imgKutusu">
 
             </div>
             <div id="6" class="imgKutusu">
@@ -227,7 +314,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
-    <script src="/js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

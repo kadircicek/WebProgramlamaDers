@@ -145,7 +145,7 @@ https://flickity.metafizzy.co
 /* draggable */
 .flickity-enabled.is-draggable {
   -webkit-tap-highlight-color: transparent;
-  tap-highlight-color: transparent;
+  -tap-highlight-color: transparent;
   user-select: none;
 }
 
@@ -372,5 +372,30 @@ span {
   position: relative;
   top: 10%;
   margin-right: 2%;
+}
+
+.kriterContainer {
+  height: 40px;
+}
+
+.kriterContainer .kriterler {
+  width: 30%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.kriterContainer .kriterler .selectTutucu {
+  position: relative;
+  top: 5%;
+  margin-right: 20px;
+}
+
+img {
+  cursor: pointer;
+}
+
+#hevagi {
+  margin-left: 74px;
 }
 /*# sourceMappingURL=stil.css.map */

@@ -35,14 +35,17 @@ var data;
 function top50Film() {
   $("#goster").hide();
 
+
   var top10 = ['Arrival', 'Hobbit', 'Call Me by Your Name', 'La La Land', 'Avatar', 'The Artist', 'Life of Pi', 'Star Wars', 'Iron Man', 'Slumdog Millionaire', 'The Revenant', 'The Avengers', 'The King’s Speech', 'The Bourne Ultimatum', 'Guardians of the Galaxy', 'Blade Runner 2049', 'Shutter Island', 'Deadpool', 'Ford v Ferrari', 'Logan', 'Gone Girl', '12 Years a Slave', 'Prisoners', 'Mad Max: Fury Road', 'Into the Wild', 'No Country for Old Men', 'There Will Be Blood', 'Inside Out', 'The Wolf of Wall Street', 'Warrior', 'Jaws', 'Toy Story 3', 'Inglourious Basterds', '3 Idiots', 'Django Unchained', 'WALL-E', 'Avengers Endgame', 'Joker', 'Avengers: İnfinity War', 'The Dark Knight Rises', 'The Intouchables', 'Whiplash', 'Interstellar', 'Inception', 'The Dark Knight', 'The Post', 'extinction', 'Lost In Space', 'Justice League', 'Coco'];
   for (let index = 0; index < top10.length; index++) {
     $.get("https://www.omdbapi.com/?s=" + top10[index] + "&apikey=ba1f4581", function (rawdata) {
       var rawstring = JSON.stringify(rawdata);
       data = JSON.parse(rawstring);
       var title = data.Search[0].Title;
+      var yil = data.Search[0].Year
       var posterurl = data.Search[0].Poster;
       document.getElementById(index).innerHTML = " <img class='d-block w-100 imgBoyutu' src= '" + posterurl + "'><br><span>" + title + "</span>";
+
 
 
 
@@ -53,22 +56,25 @@ function top50Film() {
 }
 
 function cagir(q) {
-  
+  var top10 = ['Arrival', 'Hobbit', 'Call Me by Your Name', 'La La Land', 'Avatar', 'The Artist', 'Life of Pi', 'Star Wars', 'Iron Man', 'Slumdog Millionaire', 'The Revenant', 'The Avengers', 'The King’s Speech', 'The Bourne Ultimatum', 'Guardians of the Galaxy', 'Blade Runner 2049', 'Shutter Island', 'Deadpool', 'Ford v Ferrari', 'Logan', 'Gone Girl', '12 Years a Slave', 'Prisoners', 'Mad Max: Fury Road', 'Into the Wild', 'No Country for Old Men', 'There Will Be Blood', 'Inside Out', 'The Wolf of Wall Street', 'Warrior', 'Jaws', 'Toy Story 3', 'Inglourious Basterds', '3 Idiots', 'Django Unchained', 'WALL-E', 'Avengers Endgame', 'Joker', 'Avengers: İnfinity War', 'The Dark Knight Rises', 'The Intouchables', 'Whiplash', 'Interstellar', 'Inception', 'The Dark Knight', 'The Post', 'extinction', 'Lost In Space', 'Justice League', 'Coco'];
   $("#gizle").hide();
-  if(document.getElementById('kelime').value==''){
+  if (document.getElementById('kelime').value == '') {
     $('#gizle').show();
     $("#goster").hide();
-  }else{
+  }
+  else {
     $("#goster").show();
 
   }
+
   $.get("https://www.omdbapi.com/?s=" + q + "&apikey=ba1f4581", function (rawdata) {
     var rawstring = JSON.stringify(rawdata);
     data = JSON.parse(rawstring);
     var title = data.Search[0].Title;
     var posterurl = data.Search[0].Poster;
     document.getElementById('answer').innerHTML = " <img src= '" + posterurl + "'><br><span>" + title + "</span>";
-});
+
+  });
 
 }
 
@@ -79,6 +85,13 @@ $(document).ready(function () {
     wrapAround: true,
     friction: 0.3
   });
+  var $imagesCarousel = $('.s-filmler-kapsayici').flickity({
+    contain: true,
+    autoPlay: true,
+    wrapAround: true,
+    friction: 0.3
+  });
+
   function resizeCells() {
     var flkty = $imagesCarousel.data('flickity');
     var $current = flkty.selectedIndex
@@ -103,48 +116,50 @@ $(document).ready(function () {
 
 
 
-  $(".carouselImage img").click(function () {
-    var $this = $(this);
-    var imageID = $this.attr('data-tab');
-    var imageSrc = $this.attr('src');
 
-    $('.' + imageID).removeClass('hide');
-    $('.' + imageID + ' .product-detail-image img').attr('src', imageSrc);
-  });
 
-  $('.product-detail-close,.product-detail').on('click', function () {
-    $('.product-detail').addClass('hide');
-  });
-
-  $('.modal-video').on('hidden.bs.modal', function (e) {
-    $('.modal-video iframe').attr('src', $('.modal-video iframe').attr('src'));
-  });
-
-  autoPlayYouTubeModal();
-
-  function autoPlayYouTubeModal() {
-    var trigger = $("body").find('[data-the-video]');
-    trigger.click(function () {
-      var theModal = $(this).data("target"),
-        videoSRC = $(this).attr("data-the-video"),
-        videoSRCauto = videoSRC + "&autoplay=1";
-      $(theModal + ' iframe').attr('src', videoSRCauto);
-      $(theModal + ' button.close').click(function () {
-        $(theModal + ' iframe').attr('src', videoSRC);
-      });
-      $('.modal-video').click(function () {
-        $(theModal + ' iframe').attr('src', videoSRC);
-      });
-    });
-  }
-
-  $(window).on('load resize', function () {
-    var $window = $(window);
-    $('.modal-fill-vert .modal-body > *').height(function () {
-      return $window.height() - 60;
-    });
-  });
 });
+
+function gonder(q) {
+
+  $("#myModal1").modal();
+
+
+  var data;
+  var gelenParametre = q;
+  var top10 = ['Arrival', 'Hobbit', 'Call Me by Your Name', 'La La Land', 'Avatar', 'The Artist', 'Life of Pi', 'Star Wars', 'Iron Man', 'Slumdog Millionaire', 'The Revenant', 'The Avengers', 'The King’s Speech', 'The Bourne Ultimatum', 'Guardians of the Galaxy', 'Blade Runner 2049', 'Shutter Island', 'Deadpool', 'Ford v Ferrari', 'Logan', 'Gone Girl', '12 Years a Slave', 'Prisoners', 'Mad Max: Fury Road', 'Into the Wild', 'No Country for Old Men', 'There Will Be Blood', 'Inside Out', 'The Wolf of Wall Street', 'Warrior', 'Jaws', 'Toy Story 3', 'Inglourious Basterds', '3 Idiots', 'Django Unchained', 'WALL-E', 'Avengers Endgame', 'Joker', 'Avengers: İnfinity War', 'The Dark Knight Rises', 'The Intouchables', 'Whiplash', 'Interstellar', 'Inception', 'The Dark Knight', 'The Post', 'extinction', 'Lost In Space', 'Justice League', 'Coco'];
+
+  $.get("https://www.omdbapi.com/?s=" + top10[gelenParametre] + "&apikey=ba1f4581", function (rawdata) {
+    var rawstring = JSON.stringify(rawdata);
+    data = JSON.parse(rawstring);
+    var title = data.Search[0].Title;
+    var posterurl = data.Search[0].Poster;
+    document.getElementById('hevagi').innerHTML = " <img src= '" + posterurl + "'>";
+    document.getElementById('hevagi2').innerHTML = "<span>" + title + "</span>";
+  });
+
+
+}
+function gonder1(a) {
+
+  $("#myModal").modal();
+
+
+  var data;
+
+  var top10 = ['Arrival', 'Hobbit', 'Call Me by Your Name', 'La La Land', 'Avatar', 'The Artist', 'Life of Pi', 'Star Wars', 'Iron Man', 'Slumdog Millionaire', 'The Revenant', 'The Avengers', 'The King’s Speech', 'The Bourne Ultimatum', 'Guardians of the Galaxy', 'Blade Runner 2049', 'Shutter Island', 'Deadpool', 'Ford v Ferrari', 'Logan', 'Gone Girl', '12 Years a Slave', 'Prisoners', 'Mad Max: Fury Road', 'Into the Wild', 'No Country for Old Men', 'There Will Be Blood', 'Inside Out', 'The Wolf of Wall Street', 'Warrior', 'Jaws', 'Toy Story 3', 'Inglourious Basterds', '3 Idiots', 'Django Unchained', 'WALL-E', 'Avengers Endgame', 'Joker', 'Avengers: İnfinity War', 'The Dark Knight Rises', 'The Intouchables', 'Whiplash', 'Interstellar', 'Inception', 'The Dark Knight', 'The Post', 'extinction', 'Lost In Space', 'Justice League', 'Coco'];
+
+  $.get("https://www.omdbapi.com/?s=" + a + "&apikey=ba1f4581", function (rawdata) {
+    var rawstring = JSON.stringify(rawdata);
+    data = JSON.parse(rawstring);
+    var title = data.Search[0].Title;
+    var posterurl = data.Search[0].Poster;
+    document.getElementById('hevagi3').innerHTML = " <img src= '" + posterurl + "'>";
+    document.getElementById('hevagi4').innerHTML = "<span>" + title + "</span>";
+  });
+
+
+}
 
 
 

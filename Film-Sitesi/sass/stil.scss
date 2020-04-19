@@ -3,7 +3,7 @@
   padding: 0;
   background-color: #000;
 }
-html{
+html {
   background-color: #000;
 }
 .ustFooterContainer {
@@ -14,14 +14,14 @@ html{
     margin: 0 auto;
     height: 99%;
     position: relative;
-    .logoAnasayfa{
+    .logoAnasayfa {
       height: 100%;
       width: 6%;
       float: left;
     }
-    .inputYeri{      
+    .inputYeri {
       width: 54%;
-     
+
       padding-top: 20px;
       margin-left: 120px;
     }
@@ -64,6 +64,7 @@ html{
     width: 1440px;
     height: 480px;
     box-shadow: 3px 3px 4px #000;
+    
   }
 }
 .s-slidersContainers {
@@ -130,7 +131,7 @@ https://flickity.metafizzy.co
 
 .flickity-enabled.is-draggable {
   -webkit-tap-highlight-color: transparent;
-  tap-highlight-color: transparent;
+  -tap-highlight-color: transparent;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -157,14 +158,12 @@ https://flickity.metafizzy.co
   height: 44px;
   border: none;
   border-radius: 50%;
- 
+
   cursor: pointer;
   /* vertically center */
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-
-
 
 .flickity-prev-next-button:focus {
   outline: none;
@@ -211,7 +210,6 @@ https://flickity.metafizzy.co
 /* ---- page dots ---- */
 
 .flickity-page-dots {
- 
   width: 100%;
   bottom: -25px;
   padding: 0;
@@ -333,25 +331,23 @@ a.btn.btn-primary {
   color: #fff;
   opacity: 1;
 }
-span{
+span {
   color: #fff;
-  
 }
-.footerKapsayici{
+.footerKapsayici {
   height: 100%;
   background: #1d2124;
   color: wheat;
-  
 }
-.filmlerKapsayici{
- height: 510px;
-  .s-filmler-kapsayici{
+.filmlerKapsayici {
+  height: 510px;
+  .s-filmler-kapsayici {
     width: 73%;
     height: 100%;
     margin: 0 auto;
     position: relative;
-    
-    .imgKutusu{
+
+    .imgKutusu {
       float: left;
       width: 250px;
       position: relative;
@@ -359,4 +355,25 @@ span{
       margin-right: 2%;
     }
   }
+}
+.kriterContainer {
+  height: 40px;
+
+  .kriterler {
+    width: 30%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    .selectTutucu {
+      position: relative;
+      top: 5%;
+      margin-right: 20px;
+    }
+  }
+}
+img{
+  cursor: pointer;
+}
+#hevagi{
+  margin-left: 74px;
 }

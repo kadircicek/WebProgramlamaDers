@@ -324,6 +324,7 @@ https://flickity.metafizzy.co
 .modal-body {
   position: relative;
   padding: 0px;
+  border-bottom: 1px solid #dee2e6;
 }
 
 .modal-header {
@@ -395,7 +396,43 @@ img {
   cursor: pointer;
 }
 
-#hevagi {
+#foto {
   margin-left: 74px;
+}
+
+#foto1 {
+  margin-left: 74px;
+}
+
+.yaziRengi {
+  color: #007bff;
+}
+
+#yeniRenk {
+  color: #fff;
+}
+
+#yeniRenk1 {
+  color: #fff;
+}
+
+#yeniRenk2 {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .5;
+}
+
+#yeniRenk3 {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .5;
 }
 /*# sourceMappingURL=stil.css.map */

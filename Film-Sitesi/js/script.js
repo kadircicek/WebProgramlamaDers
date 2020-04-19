@@ -76,6 +76,7 @@ function cagir(q) {
 
   });
 
+
 }
 
 $(document).ready(function () {
@@ -85,12 +86,7 @@ $(document).ready(function () {
     wrapAround: true,
     friction: 0.3
   });
-  var $imagesCarousel = $('.s-filmler-kapsayici').flickity({
-    contain: true,
-    autoPlay: true,
-    wrapAround: true,
-    friction: 0.3
-  });
+ 
 
   function resizeCells() {
     var flkty = $imagesCarousel.data('flickity');
@@ -134,8 +130,12 @@ function gonder(q) {
     data = JSON.parse(rawstring);
     var title = data.Search[0].Title;
     var posterurl = data.Search[0].Poster;
-    document.getElementById('hevagi').innerHTML = " <img src= '" + posterurl + "'>";
-    document.getElementById('hevagi2').innerHTML = "<span>" + title + "</span>";
+    var years = data.Search[0].Year;
+    var imdburl = "https://www.imdb.com/title/" + data.Search[0].imdbID + "/";
+    document.getElementById('foto').innerHTML = " <img src= '" + posterurl + "'>";
+    document.getElementById('baslik').innerHTML = "<span>Filmin Adı: </span><span class='yaziRengi'>" + title + "</span>";
+    document.getElementById('yil').innerHTML = "<span>Filmin Yılı: </span><span class='yaziRengi'>" + years + "</span>";
+    document.getElementById('imdb').innerHTML = "<span>IMDB Puanı: <a href='" + imdburl + "'target='_blank'>" + imdburl + "</a></span>";
   });
 
 
@@ -154,8 +154,12 @@ function gonder1(a) {
     data = JSON.parse(rawstring);
     var title = data.Search[0].Title;
     var posterurl = data.Search[0].Poster;
-    document.getElementById('hevagi3').innerHTML = " <img src= '" + posterurl + "'>";
-    document.getElementById('hevagi4').innerHTML = "<span>" + title + "</span>";
+    var years = data.Search[0].Year;
+    var imdburl = "https://www.imdb.com/title/" + data.Search[0].imdbID + "/";
+    document.getElementById('foto1').innerHTML = " <img src= '" + posterurl + "'>";
+    document.getElementById('baslik1').innerHTML = "<span>Filmin Adı: </span><span class='yaziRengi'>" + title + "</span>";
+    document.getElementById('yil1').innerHTML = "<span>Filmin Yılı: </span><span class='yaziRengi'>" + years + "</span>";
+    document.getElementById('imdb1').innerHTML = "<span>IMDB Puanı: <a href='" + imdburl + "'target='_blank'>" + imdburl + "</a></span>";
   });
 
 

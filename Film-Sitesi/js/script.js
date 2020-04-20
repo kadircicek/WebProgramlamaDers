@@ -38,12 +38,9 @@ function top50Film() {
 
   var top10 = ['Arrival', 'Hobbit', 'Call Me by Your Name', 'La La Land', 'Avatar', 'The Artist', 'Life of Pi', 'Star Wars', 'Iron Man', 'Slumdog Millionaire', 'The Revenant', 'The Avengers', 'The King’s Speech', 'The Bourne Ultimatum', 'Guardians of the Galaxy', 'Blade Runner 2049', 'Shutter Island', 'Deadpool', 'Ford v Ferrari', 'Logan', 'Gone Girl', '12 Years a Slave', 'Prisoners', 'Mad Max: Fury Road', 'Into the Wild', 'No Country for Old Men', 'There Will Be Blood', 'Inside Out', 'The Wolf of Wall Street', 'Warrior', 'Jaws', 'Toy Story 3', 'Inglourious Basterds', '3 Idiots', 'Django Unchained', 'WALL-E', 'Avengers Endgame', 'Joker', 'Avengers: İnfinity War', 'The Dark Knight Rises', 'The Intouchables', 'Whiplash', 'Interstellar', 'Inception', 'The Dark Knight', 'The Post', 'extinction', 'Lost In Space', 'Justice League', 'Coco'];
   for (let index = 0; index < top10.length; index++) {
-    $.get("https://www.omdbapi.com/?s=" + top10[index] + "&apikey=ba1f4581", function (rawdata) {
-      var rawstring = JSON.stringify(rawdata);
-      data = JSON.parse(rawstring);
-      var title = data.Search[0].Title;
-      var yil = data.Search[0].Year
-      var posterurl = data.Search[0].Poster;
+    $.get("https://www.omdbapi.com/?t=" + top10[index] + "&apikey=ba1f4581", function (rawdata) {
+      var title = rawdata.Title;
+      var posterurl = rawdata.Poster;
       document.getElementById(index).innerHTML = " <img class='d-block w-100 imgBoyutu' src= '" + posterurl + "'><br><span>" + title + "</span>";
 
 
@@ -86,7 +83,7 @@ $(document).ready(function () {
     wrapAround: true,
     friction: 0.3
   });
- 
+
 
   function resizeCells() {
     var flkty = $imagesCarousel.data('flickity');
@@ -115,27 +112,39 @@ $(document).ready(function () {
 
 
 });
-
+var imdbYildizi = "<i class='fas fa-star'></i>" + "<i class='fas fa-star'></i>" + "<i class='fas fa-star'></i>" + "<i class='fas fa-star'></i>"
+var imdbYildizi5 = "<i class='fas fa-star'></i>" + "<i class='fas fa-star'></i>" + "<i class='fas fa-star'></i>" + "<i class='fas fa-star'></i>"+"<i class='fas fa-star'></i>"
 function gonder(q) {
-
+ 
   $("#myModal1").modal();
-
-
-  var data;
   var gelenParametre = q;
   var top10 = ['Arrival', 'Hobbit', 'Call Me by Your Name', 'La La Land', 'Avatar', 'The Artist', 'Life of Pi', 'Star Wars', 'Iron Man', 'Slumdog Millionaire', 'The Revenant', 'The Avengers', 'The King’s Speech', 'The Bourne Ultimatum', 'Guardians of the Galaxy', 'Blade Runner 2049', 'Shutter Island', 'Deadpool', 'Ford v Ferrari', 'Logan', 'Gone Girl', '12 Years a Slave', 'Prisoners', 'Mad Max: Fury Road', 'Into the Wild', 'No Country for Old Men', 'There Will Be Blood', 'Inside Out', 'The Wolf of Wall Street', 'Warrior', 'Jaws', 'Toy Story 3', 'Inglourious Basterds', '3 Idiots', 'Django Unchained', 'WALL-E', 'Avengers Endgame', 'Joker', 'Avengers: İnfinity War', 'The Dark Knight Rises', 'The Intouchables', 'Whiplash', 'Interstellar', 'Inception', 'The Dark Knight', 'The Post', 'extinction', 'Lost In Space', 'Justice League', 'Coco'];
 
-  $.get("https://www.omdbapi.com/?s=" + top10[gelenParametre] + "&apikey=ba1f4581", function (rawdata) {
-    var rawstring = JSON.stringify(rawdata);
-    data = JSON.parse(rawstring);
-    var title = data.Search[0].Title;
-    var posterurl = data.Search[0].Poster;
-    var years = data.Search[0].Year;
-    var imdburl = "https://www.imdb.com/title/" + data.Search[0].imdbID + "/";
+  $.get("https://www.omdbapi.com/?t=" + top10[gelenParametre] + "&apikey=ba1f4581", function (rawdata) {
+    var title = rawdata.Title;
+    var posterurl = rawdata.Poster;
+    var years = rawdata.Year;
+    var imdburl = rawdata.imdbRating;
+    var turu = rawdata.Genre;
+    var filminAciklamasi = rawdata.Plot;
+    var sure = rawdata.Runtime;
+    var yonetmen = rawdata.Director;
+    var oyuncular = rawdata.Actors;
+    if (imdburl >= 7.0 && imdburl <= 8.0) {
+      document.getElementById('imdb').innerHTML = "<span>IMDB: <a class='aImdb' href='" + imdburl + "'target='_blank'>" + imdburl + " </a><span>" + imdbYildizi + "</span></span>";
+    }
+    else if (imdburl > 8.0 && imdburl <= 10.0) {
+      document.getElementById('imdb').innerHTML = "<span>IMDB: <a class='aImdb' href='" + imdburl + "'target='_blank'>" + imdburl + " </a><span>" + imdbYildizi5 + "</span></span>";
+    }
     document.getElementById('foto').innerHTML = " <img src= '" + posterurl + "'>";
-    document.getElementById('baslik').innerHTML = "<span>Filmin Adı: </span><span class='yaziRengi'>" + title + "</span>";
-    document.getElementById('yil').innerHTML = "<span>Filmin Yılı: </span><span class='yaziRengi'>" + years + "</span>";
-    document.getElementById('imdb').innerHTML = "<span>IMDB Puanı: <a href='" + imdburl + "'target='_blank'>" + imdburl + "</a></span>";
+    document.getElementById('baslik').innerHTML = "<span> Adı: </span><span class='yaziRengi'>" + title + "</span>";
+    document.getElementById('aciklama').innerHTML = "<span> Açıklaması: </span><span class='yaziRengi'>" + filminAciklamasi + "</span>";
+    document.getElementById('sure').innerHTML = "<span> Süresi: </span><span class='yaziRengi'>" + sure + "</span>";
+    document.getElementById('turu').innerHTML = "<span> Türü: </span><span class='yaziRengi'>" + turu + "</span>";
+    document.getElementById('director').innerHTML = "<span> Yönetmen: </span><span class='yaziRengi'>" + yonetmen + "</span>";
+    document.getElementById('actors').innerHTML = "<span> Oyuncular: </span><span class='yaziRengi'>" + oyuncular + "</span>";
+    document.getElementById('yil').innerHTML = "<span> Yılı: </span><span class='yaziRengi'>" + years + "</span>";
+
   });
 
 
@@ -144,22 +153,31 @@ function gonder1(a) {
 
   $("#myModal").modal();
 
-
-  var data;
-
-  var top10 = ['Arrival', 'Hobbit', 'Call Me by Your Name', 'La La Land', 'Avatar', 'The Artist', 'Life of Pi', 'Star Wars', 'Iron Man', 'Slumdog Millionaire', 'The Revenant', 'The Avengers', 'The King’s Speech', 'The Bourne Ultimatum', 'Guardians of the Galaxy', 'Blade Runner 2049', 'Shutter Island', 'Deadpool', 'Ford v Ferrari', 'Logan', 'Gone Girl', '12 Years a Slave', 'Prisoners', 'Mad Max: Fury Road', 'Into the Wild', 'No Country for Old Men', 'There Will Be Blood', 'Inside Out', 'The Wolf of Wall Street', 'Warrior', 'Jaws', 'Toy Story 3', 'Inglourious Basterds', '3 Idiots', 'Django Unchained', 'WALL-E', 'Avengers Endgame', 'Joker', 'Avengers: İnfinity War', 'The Dark Knight Rises', 'The Intouchables', 'Whiplash', 'Interstellar', 'Inception', 'The Dark Knight', 'The Post', 'extinction', 'Lost In Space', 'Justice League', 'Coco'];
-
-  $.get("https://www.omdbapi.com/?s=" + a + "&apikey=ba1f4581", function (rawdata) {
-    var rawstring = JSON.stringify(rawdata);
-    data = JSON.parse(rawstring);
-    var title = data.Search[0].Title;
-    var posterurl = data.Search[0].Poster;
-    var years = data.Search[0].Year;
-    var imdburl = "https://www.imdb.com/title/" + data.Search[0].imdbID + "/";
+  $.get("https://www.omdbapi.com/?t=" + a + "&apikey=ba1f4581", function (rawdata) {
+    var title = rawdata.Title;
+    var posterurl = rawdata.Poster;
+    var years = rawdata.Year;
+    var imdburl = rawdata.imdbRating;
+    var turu = rawdata.Genre;
+    var filminAciklamasi = rawdata.Plot;
+    var sure = rawdata.Runtime;
+    var yonetmen = rawdata.Director;
+    var oyuncular = rawdata.Actors;
+    if (imdburl >= 7.0 && imdburl <= 8.0) {
+      document.getElementById('imdb1').innerHTML = "<span>IMDB: <a class='aImdb' href='" + imdburl + "'target='_blank'>" + imdburl + " </a><span>" + imdbYildizi + "</span></span>";
+    }
+    else if (imdburl > 8.0 && imdburl <= 10.0) {
+      document.getElementById('imdb1').innerHTML = "<span>IMDB: <a class='aImdb' href='" + imdburl + "'target='_blank'>" + imdburl + " </a><span>" + imdbYildizi5 + "</span></span>";
+    }
     document.getElementById('foto1').innerHTML = " <img src= '" + posterurl + "'>";
-    document.getElementById('baslik1').innerHTML = "<span>Filmin Adı: </span><span class='yaziRengi'>" + title + "</span>";
-    document.getElementById('yil1').innerHTML = "<span>Filmin Yılı: </span><span class='yaziRengi'>" + years + "</span>";
-    document.getElementById('imdb1').innerHTML = "<span>IMDB Puanı: <a href='" + imdburl + "'target='_blank'>" + imdburl + "</a></span>";
+    document.getElementById('baslik1').innerHTML = "<span> Adı: </span><span class='yaziRengi'>" + title + "</span>";
+    document.getElementById('aciklama1').innerHTML = "<span> Açıklaması: </span><span class='yaziRengi'>" + filminAciklamasi + "</span>";
+    document.getElementById('sure1').innerHTML = "<span> Süresi: </span><span class='yaziRengi'>" + sure + "</span>";
+    document.getElementById('turu1').innerHTML = "<span> Türü: </span><span class='yaziRengi'>" + turu + "</span>";
+    document.getElementById('director1').innerHTML = "<span> Yönetmen: </span><span class='yaziRengi'>" + yonetmen + "</span>";
+    document.getElementById('actors1').innerHTML = "<span> Oyuncular: </span><span class='yaziRengi'>" + oyuncular + "</span>";
+    document.getElementById('yil1').innerHTML = "<span> Yılı: </span><span class='yaziRengi'>" + years + "</span>";
+    
   });
 
 

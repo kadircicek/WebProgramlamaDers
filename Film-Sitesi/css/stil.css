@@ -405,7 +405,7 @@ img {
 }
 
 .yaziRengi {
-  color: #007bff;
+  color: #dc3545;
 }
 
 #yeniRenk {
@@ -455,5 +455,13 @@ img {
   margin: 15px;
   border-radius: .25rem;
   border: 0px solid rgba(0, 0, 0, 0.125);
+}
+
+#filmAraYazisi {
+  color: #fff;
+}
+
+.aImdb {
+  color: #dc3545;
 }
 /*# sourceMappingURL=stil.css.map */

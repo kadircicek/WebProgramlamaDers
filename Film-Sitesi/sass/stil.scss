@@ -64,7 +64,6 @@ html {
     width: 1440px;
     height: 480px;
     box-shadow: 3px 3px 4px #000;
-    
   }
 }
 .s-slidersContainers {
@@ -372,39 +371,67 @@ span {
     }
   }
 }
-img{
+img {
   cursor: pointer;
 }
-#foto{
+#foto {
   margin-left: 74px;
 }
-#foto1{
+#foto1 {
   margin-left: 74px;
 }
-.yaziRengi{
-  color: #007bff;;
+.yaziRengi {
+  color: #007bff;
 }
-#yeniRenk{
+#yeniRenk {
   color: #fff;
 }
-#yeniRenk1{
+#yeniRenk1 {
   color: #fff;
 }
-#yeniRenk2{
+#yeniRenk2 {
   float: right;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1;
   color: #fff;
   text-shadow: 0 1px 0 #fff;
-  opacity: .5;
+  opacity: 0.5;
 }
-#yeniRenk3{
+#yeniRenk3 {
   float: right;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1;
   color: #fff;
   text-shadow: 0 1px 0 #fff;
-  opacity: .5;
+  opacity: 0.5;
+}
+.ortaFilmlerinHepsiniKapsayan {
+ 
+  .ortaFilmlerinHepsiniKapsayan-Kapsayici {
+    width: 84%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    background: #000;
+    .card{
+      position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    margin: 15px;
+    border-radius: .25rem;
+    border: 0px solid rgba(0,0,0,.125);
+    }
+    
+  }
 }

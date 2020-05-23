@@ -11,13 +11,26 @@
 
 <body>
     <?php
-    include './islemler.php';
-    echo var_dump(execDb("select * from kullanici where email=".$_POST["kullaniciadi"]." and sifre=".$_POST["sifre"].""));
+    session_start();
+    if (isset($_SESSION["medipoltwitterkullanici"])) {
+        header('Location: /akis.php');
+    }
     ?>
     <?php
+    include './islemler.php';
+    $sonuc = null;
+    if (isset($_POST["kullaniciadi"])) {
+        $sonuc = execDb("SELECT * FROM kullanici WHERE email='" . $_POST["kullaniciadi"] . "' AND sifre='" . $_POST["sifre"] . "'");
+    }
 
-    include './parcali/header.php';
+
+    if ($sonuc != null && count($sonuc) > 0) {
+
+        $_SESSION["medipoltwitterkullanici"] = $sonuc;
+        header('Location: /akis.php');
+    }
     ?>
+
 
     <div class="pure-g">
         <div class="pure-u-1-5">
@@ -28,7 +41,7 @@
         <div class="pure-u-3-5">
 
             <div class="anaicerik cerceveli">
-                <form class="pure-form pure-form-stacked" method="POST" action="index.php">
+                <form class="pure-form pure-form-stacked" method="POST">
                     <fieldset>
                         <legend>Giriş</legend>
                         <label>Email</label>
@@ -41,6 +54,11 @@
                         <label for="stacked-remember" class="pure-checkbox">
                             <input type="checkbox" id="stacked-remember" /> Remember me</label>
                         <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+                        <?php
+                        if ($sonuc !== null && count($sonuc == 0)) {
+                            echo '<div class="uyari">Kullanıcı Adınız veya Şifreniz Yanlış..!</div>';
+                        }
+                        ?>
                     </fieldset>
                 </form>
             </div>
